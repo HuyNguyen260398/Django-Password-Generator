@@ -1,0 +1,56 @@
+{% extends 'generator/main.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <h1>Password Generator</h1>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col-md-12">
+      <form action="{% url 'password' %}">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <select name="length">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12" selected="selected">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+              </select>
+              <label>Length</label>
+            </div>
+            <div class="col-md-3">
+              <input type="checkbox" name="uppercase" /> Uppercase
+            </div>
+            <div class="col-md-3">
+              <input type="checkbox" name="numbers" /> Numbers
+            </div>
+            <div class="col-md-3">
+              <input type="checkbox" name="special" /> Special Characters
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-md-12 d-flex justify-content-center">
+              <input class="btn btn-lg btn-success" type="submit" value="Generate Password" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col-md-12 d-flex justify-content-center">
+      <a href="{% url 'about' %}" class="btn btn-md btn-info">About this project</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
